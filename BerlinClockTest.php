@@ -69,4 +69,11 @@ class BerlinClockTest extends TestCase
         $actual = $test->calculateBlockOf5Minutes($timer);
         $this->assertEquals("YYRYYRYYRYY",$actual);
     }
+
+    public function test_CalculateBlockOf5Minutes_given12H10_YY(){
+        $test = new BerlinClock();
+        $timer="12:10:00";
+        $actual = $test->calculateBlockOf5Minutes($timer);
+        $this->assertEquals("YY",$actual);
+    }
 }
