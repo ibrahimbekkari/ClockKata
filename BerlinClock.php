@@ -1,7 +1,9 @@
 <?php
 
-class BerlinClock
-{
+class BerlinClock{
+
+
+
 
     public function calculateMinutes($timer)
     {
