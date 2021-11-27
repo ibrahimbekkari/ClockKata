@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 class BerlinClockTest extends TestCase
 {
-    //TEST SIMPLES MINUTES
+    // test minutes
     public function test_CalculateMinutes_given12H00_returnNothing(){
         $test = new BerlinClock();
         $timer="12:00:00";
@@ -45,6 +45,14 @@ class BerlinClockTest extends TestCase
         $test = new BerlinClock();
         $timer="12:05:00";
         $actual = $test->calculateMinutes($timer);
+        $this->assertEquals("",$actual);
+    }
+
+    // test block 5 minutes
+    public function test_CalculateBlockOfMinutes_given12H00_returnNothing(){
+        $test = new BerlinClock();
+        $timer="12:00:00";
+        $actual = $test->calculateBlockOf5Minutes($timer);
         $this->assertEquals("",$actual);
     }
 }
