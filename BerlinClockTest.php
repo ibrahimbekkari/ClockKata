@@ -181,4 +181,12 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("RRRR",$actual);
     }
 
+    // test secondes
+    public function test_calculateSeconds_given0s_returnNothing(){
+        $test = new BerlinClock();
+        $timer="00:00:00";
+        $actual = $test->calculateSeconds($timer);
+        $this->assertEquals("",$actual);
+    }
+
 }
