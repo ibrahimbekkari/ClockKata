@@ -2,7 +2,7 @@
 
 class BerlinClock{
 
-    public function calculateMinutes($timer)
+    public function calculateMinutes($timer) //12:00:00
     {
         $var = explode(":", $timer);
         $minutes = strval($var[1]);
