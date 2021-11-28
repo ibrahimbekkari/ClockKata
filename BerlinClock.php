@@ -56,7 +56,7 @@ class BerlinClock{
     public function calculateSeconds($timer){
         $var=explode(":",$timer);
         $sec = strval($var[2]) ;
-        if($sec != 0 || $sec%2==0)
+        if($sec != 0 && $sec%2==0)
             return "R";
         else
             return "";
