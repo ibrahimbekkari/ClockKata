@@ -62,4 +62,18 @@ class BerlinClock{
             return "";
     }
 
+    public function entireClock($timer){
+        $result = "";
+        $result .= $this->calculateSeconds($timer);
+        $result .= "\n";
+        $result .= $this->calculateBlockOf5Hours($timer);
+        $result .= "\n";
+        $result .= $this->calculateHours($timer);
+        $result .= "\n";
+        $result .= $this->calculateBlockOf5Minutes($timer);
+        $result .= "\n";
+        $result .= $this->calculateMinutes($timer);
+        return $result;
+    }
+
 }
