@@ -181,5 +181,33 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("RRRR",$actual);
     }
 
+    // test secondes
+    public function test_calculateSeconds_given0s_returnNothing(){
+        $test = new BerlinClock();
+        $timer="00:00:00";
+        $actual = $test->calculateSeconds($timer);
+        $this->assertEquals("",$actual);
+    }
+
+    public function test_calculateSeconds_given1s_returnNothing(){
+        $test = new BerlinClock();
+        $timer="00:00:01";
+        $actual = $test->calculateSeconds($timer);
+        $this->assertEquals("",$actual);
+    }
+
+    public function test_calculateSeconds_given2s_returnR(){
+        $test = new BerlinClock();
+        $timer="00:00:02";
+        $actual = $test->calculateSeconds($timer);
+        $this->assertEquals("R",$actual);
+    }
+
+    public function test_calculateSeconds_given3s_returnNothing(){
+        $test = new BerlinClock();
+        $timer="00:00:03";
+        $actual = $test->calculateSeconds($timer);
+        $this->assertEquals("",$actual);
+    }
 
 }

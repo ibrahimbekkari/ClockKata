@@ -2,7 +2,7 @@
 
 class BerlinClock{
 
-    public function calculateMinutes($timer)
+    public function calculateMinutes($timer) //12:00:00
     {
         $var = explode(":", $timer);
         $minutes = strval($var[1]);
@@ -52,5 +52,15 @@ class BerlinClock{
         }
         return $string;
     }
+
+    public function calculateSeconds($timer){
+        $var=explode(":",$timer);
+        $sec = strval($var[2]) ;
+        if($sec != 0 && $sec%2==0)
+            return "R";
+        else
+            return "";
+    }
+
 
 }
