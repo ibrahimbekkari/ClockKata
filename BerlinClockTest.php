@@ -226,6 +226,13 @@ class BerlinClockTest extends TestCase
 
     }
 
+    public function test_clock_given23h55m59s_returnX_RRRR_RRR_YYRYYRYYRYY_X(){
+        $test = new BerlinClock();
+        $timer="23:55:59";
+        $actual = $test->entireClock($timer);
+        $this->assertEquals("\nRRRR\nRRR\nYYRYYRYYRYY\n",$actual);
+    }
+
 
 
 
