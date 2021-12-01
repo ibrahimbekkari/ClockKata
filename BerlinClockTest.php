@@ -142,7 +142,6 @@ class BerlinClockTest extends TestCase
     }
 
     // test block 5 hours
-
     public function test_CalculateBlockOf5Hours_given00H00_returnNothing(){
         $test = new BerlinClock();
         $timer = "00:00";
@@ -209,5 +208,25 @@ class BerlinClockTest extends TestCase
         $actual = $test->calculateSeconds($timer);
         $this->assertEquals("",$actual);
     }
+
+    // test entire clock
+    public function test_clock_given1h15m02s_returnR_X_R_YYR_X(){
+        $test = new BerlinClock();
+        $timer="01:15:02";
+        $actual = $test->entireClock($timer);
+        $this->assertEquals("R\n\nR\nYYR\n",$actual);
+    }
+
+    public function test_clock_given00H00m00s_returnNothing(){
+
+        $test = new BerlinClock();
+        $timer = "00:00:00";
+        $actual = $test->entireClock($timer);
+        $this->assertEquals("\n\n\n\n",$actual);
+
+    }
+
+
+
 
 }

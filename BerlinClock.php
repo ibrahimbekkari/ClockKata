@@ -47,7 +47,7 @@ class BerlinClock{
         $hours = strval($var[0]);
         $blocks = $hours/5;
         $string = "";
-        for ($i = 0; $i < $blocks; $i++){
+        for ($i = 1; $i <= $blocks; $i++){
             $string.= "R";
         }
         return $string;
@@ -62,5 +62,18 @@ class BerlinClock{
             return "";
     }
 
+    public function entireClock($timer){
+        $result = "";
+        $result .= $this->calculateSeconds($timer);
+        $result .= "\n";
+        $result .= $this->calculateBlockOf5Hours($timer);
+        $result .= "\n";
+        $result .= $this->calculateHours($timer);
+        $result .= "\n";
+        $result .= $this->calculateBlockOf5Minutes($timer);
+        $result .= "\n";
+        $result .= $this->calculateMinutes($timer);
+        return $result;
+    }
 
 }
