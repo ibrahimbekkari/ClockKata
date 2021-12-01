@@ -182,9 +182,4 @@ class BerlinClockTest extends TestCase
     }
 
 
-
-
-
-
-
 }
